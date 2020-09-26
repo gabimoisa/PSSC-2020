@@ -1,0 +1,10 @@
+Functionalitatile aplicatiei:
+-utilizatorul se poate conecta cu github, facebook, google sau isi poate face propriul cont
+-se poate vizualiza fiecare intrebare
+-se pot adauga noi intrebari
+-se pot adauga comentarii la intrebarile existente
+-se poate vedea cati utilizatori au vazut intrebarea, cati au adaugat comentarii si cati au votat daca este ok intrebarea
+-exista buton de search pentru a putea cauta mai usor intrebarea dorita
+-sunt prezente tag-urile care te ajuta sa filtrezi mai usor intrebarile
+-exista posibilitadea de a gasi un job("find a job")
+-exista posibilitatea de a gasi cele mai bune companii("Companies")
