@@ -63,19 +63,29 @@ namespace Test.App
         {
             if (string.IsNullOrWhiteSpace(createQuestion.Description))
             {
-                var errors = new List<string>() { "Your question" };
+                var errors = new List<string>() { "Describe the question" };
                 return new QuestionValidationFailed(errors);
             }
-
-            if(string.IsNullOrEmpty(createQuestion.Title))
+            if (createQuestion.Description.Length > 1000)
             {
-                return new QuestionNotPosted("Give a title");
+                var errors = new List<string>() { "Question must have less than 1000 characters" };
+                return new QuestionValidationFailed(errors);
+            }
+            if (createQuestion.Tags.Length < 1 || createQuestion.Tags.Length > 3)
+            {
+                var errors = new List<string>() { "You must have min. 1 tag or max. 3 tags" };
+                return new QuestionValidationFailed(errors);
+            }
+            if (string.IsNullOrEmpty(createQuestion.Title))
+            {
+                return new QuestionNotPosted("Choose a title");
             }
 
             var questionId = Guid.NewGuid();
-            var result = new QuestionPosted(questionId, createQuestion.Description, createQuestion.Vote); 
+            var result = new QuestionPosted(questionId, createQuestion.Description, createQuestion.Vote);
 
             return result;
         }
     }
 }
+
